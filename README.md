@@ -1,4 +1,4 @@
-#nate
+# nate
 
 *Numerical Analysis: Theory and Experiments* is a textbook on numerical analysis. It introduces the design and implementation of numerical methods, as well as the analysis of their accuracy using both theoretical and experimental tools. Problem areas include interpolation, integration, linear systems, zero finding, and differential equations.
 
