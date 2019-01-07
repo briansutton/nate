@@ -12,7 +12,7 @@ function ys = sampleuni(f,ab,m,n)
 %
 %     M: degree
 %
-%     N: number of subintervals
+%     N: number of subintervals (default: N = 1)
 %
 %   Outputs:
 %
