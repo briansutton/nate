@@ -21,6 +21,15 @@ function varargout = plotsample(xs,ys,varargin)
 %   Points are plotted in a single series, regardless of whether they are
 %   provided as row or column vectors or matrices.
 %
+%   Example:
+%
+%     f = @(x) exp(x);
+%     xs = [-2; -1; 0; 1; 2];
+%     ys = arrayfun(f,xs);
+%     newfig;
+%     plotfun(f,[-2 2]);
+%     plotsample(xs,ys);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,inf);

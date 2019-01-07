@@ -19,6 +19,16 @@ function ys = samplecheb(f,ab,m)
 %   YS(I) = F(XS(I)), in which XS is the Chebyshev grid of degree M on
 %   [A,B].
 %
+%   Example:
+%
+%     f = @(x) exp(x); a = -2; b = 2;
+%     m = 8;
+%     xs = gridcheb([a b],m)
+%     ps = samplecheb(f,[a b],m)
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotsample(xs,ps);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,3);

@@ -50,6 +50,19 @@ function [ps,qs,rs,asbs] = ivpnl2chebpw(f,dfdu,dfdv,ab,ua,va,m,n,kmax,tol)
 %   Its first and second derivatives are sampled on grids of degrees M+1
 %   and M, respectively, to produce QS and RS.
 %
+%   Example: The Van der Pol equation U'' = -U + 5*(1-U^2)*U'.
+%
+%     f = @(t,u,v) -u+5*(1-u^2)*v;
+%     dfdu = @(t,u,v) -1-10*u*v;
+%     dfdv = @(t,u,v) 5*(1-u^2);
+%     a = 0; b = 50;
+%     ua = 0.1; va = 0;
+%     m = 32; n = 100;
+%     [ps,qs,rs,asbs] = ivpnl2chebpw(f,dfdu,dfdv,[a b],ua,va,m,n);
+%     p = interpchebpw(ps,asbs);
+%     newfig;
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(8,10);

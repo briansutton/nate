@@ -22,6 +22,12 @@ function disptable(varargin)
 %
 %   For more information on format strings, type HELP FPRINTF.
 %
+%   Example:
+%
+%     n = [0; 1; 2; 3; 4];
+%     x = sqrt(n);
+%     disptable('n',n,'%1d','sqrt(n)',x,'%7.4f');
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,inf);

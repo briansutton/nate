@@ -18,6 +18,17 @@ function p = interpcheb(ps,ab)
 %   on [A,B]. Then P is the unique polynomial of degree at most M whose
 %   graph intersects the points (XS,PS).
 %
+%   Example:
+%
+%     f = @(x) sin(x); a = -pi; b = pi;
+%     m = 6;
+%     ps = samplecheb(f,[a b],m);
+%     p = interpcheb(ps,[a b]);
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotsample(gridcheb([a b],m),ps);
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

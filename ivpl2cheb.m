@@ -43,6 +43,21 @@ function [ps,qs,rs] = ivpl2cheb(al,be,ga,g,ab,c,d,m)
 %
 %   P(T) is a degree-M polynomial that approximates U(T).
 %
+%   Example: The forced and damped oscillator 2*U + 0.1*U' + U'' = SIN(T).
+%
+%     al = @(t) 2;
+%     be = @(t) 0.1;
+%     ga = @(t) 1;
+%     g = @(t) sin(t);
+%     a = 0; b = 90;
+%     c = [ 1 0 0; 0 1 0 ];
+%     d = [1; 0];
+%     m = 100;
+%     [ps,qs,rs] = ivpl2cheb(al,be,ga,g,[a b],c,d,m,n);
+%     p = interpcheb(ps,[a b]);
+%     newfig;
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(8,8);

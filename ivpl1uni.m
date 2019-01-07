@@ -38,6 +38,20 @@ function [ps,qs] = ivpl1uni(al,be,g,ab,c,d,m,n)
 %   P(T) is a piecewise-polynomial function that approximates U(T). Its
 %   pieces are of degree M+1.
 %
+%   Example: T*U + U' = 0.
+%
+%     al = @(t) t;
+%     be = @(t) 1;
+%     g = @(t) 0;
+%     a = 0; b = 6;
+%     c = [1 0];
+%     d = 1;
+%     m = 2; n = 200;
+%     [ps,qs] = ivpl1uni(al,be,g,[a b],c,d,m,n);
+%     p = interpuni(ps,[a b]);
+%     newfig;
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(8,8);

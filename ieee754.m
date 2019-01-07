@@ -17,6 +17,14 @@ function [sbin,ebin,fbin] = ieee754(x)
 %     FBIN: significand for X in binary notation, except for the implicit
 %     leading 1
 %
+%   Example:
+%
+%     [sbin,ebin,fbin] = ieee754(-9.25)
+%     s = bin2dec(sbin)
+%     be = bin2dec(ebin)-1023
+%     f = 2^(-52)*bin2dec(['1' fbin])
+%     (-1)^s*f*2^be
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,1);

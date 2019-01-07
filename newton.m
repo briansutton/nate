@@ -24,6 +24,18 @@ function [z,x] = newton(f,fprime,x0,kmax,tol)
 %
 %   If Newton's method fails to converge, then Z is assigned NaN.
 %
+%   Example:
+%
+%     f = @(x) log(x)-1;
+%     fprime = @(x) 1/x;
+%     x0 = 2.8;
+%     [z,x] = newton(f,fprime,x0)
+%     newfig;
+%     plotfun(f,[0.1 4]);
+%     axis([0 4 -3 3]);
+%     grid on;
+%     plot(z,0,'*');
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,5);

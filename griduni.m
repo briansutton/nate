@@ -19,6 +19,12 @@ function [xs,ws] = griduni(ab,m,n)
 %     WS: an (M+1)-by-1 vector containing the barycentric weights for a
 %     uniform grid
 %
+%   Example:
+%
+%     a = 0; b = 2;
+%     m = 2; n = 4;
+%     [xs,ws] = griduni([a b],m,n)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,3);

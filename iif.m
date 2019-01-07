@@ -16,6 +16,13 @@ function z = iif(b,x,y)
 %
 %     Z: equals X() if B is true or Y() if B is false
 %
+%   Example:
+%
+%     x = -3;
+%     iif(x>=0,@() x,@() -x)
+%     y = 5;
+%     iif(y>=0,@() y,@() -y)
+%
 %   Copyright 2019 Brian Sutton
 
 if b

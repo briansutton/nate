@@ -19,6 +19,15 @@ function x = backsubstitute(U,b)
 %
 %     X: the solution to U*X = B
 %
+%   Example:
+%
+%     U = [ 2 3; 0 5 ]
+%     b = [1; 5]
+%     x = backsubstitute(U,b)
+%     % check
+%     U*x
+%     b
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

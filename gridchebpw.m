@@ -19,6 +19,12 @@ function [xs,ws] = gridchebpw(asbs,m)
 %     WS: an (M+1)-by-1 vector containing the barycentric weights for a
 %     Chebyshev grid of degree M
 %
+%   Example:
+%
+%     asbs = [ 0 1 3 6; 1 3 6 10 ]
+%     m = 6;
+%     [xs,ws] = gridchebpw(asbs,m)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

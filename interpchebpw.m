@@ -22,6 +22,19 @@ function p = interpchebpw(ps,asbs)
 %   P(XS(I,J)) = PS(I,J). In addition, P is a polynomial of degree at most
 %   M on each subinterval [AJ,BJ].
 %
+%   Example:
+%
+%     f = @(x) exp(x)*sin(3*x); a = -pi; b = pi;
+%     asbs = [ -pi 0 pi/2; 0 pi/2 pi ];
+%     m = 4;
+%     ps = samplechebpw(f,asbs,m);
+%     p = interpchebpw(ps,asbs);
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotpartition(asbs);
+%     plotsample(gridchebpw(asbs,m),ps);
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

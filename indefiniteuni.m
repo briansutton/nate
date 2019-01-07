@@ -19,6 +19,18 @@ function [J,K] = indefiniteuni(m)
 %   over the same interval, then P is an antiderivative of Q if and only if
 %   J*PS = (B-A)*K*QS.
 %
+%   Example:
+%
+%     m = 2;
+%     [J,K] = indefiniteuni(m);
+%     q = @(x) 5*x^2+2*x-3;
+%     p = @(x) (5/3)*x^3+x^2-3*x+4;
+%     a = -2; b = 2;
+%     qs = sampleuni(q,[a b],m);
+%     ps = sampleuni(p,[a b],m+1);
+%     J*ps
+%     (b-a)*K*qs
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,1);

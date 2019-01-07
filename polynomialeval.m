@@ -17,6 +17,11 @@ function y = polynomialeval(c,x)
 %
 %     Y: value of the polynomial at the given X
 %
+%   Example:
+%
+%     polynomialeval([2 -1 4],0.5)
+%     2-0.5+4*0.5^2
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

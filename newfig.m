@@ -17,6 +17,18 @@ function varargout = newfig(m,n)
 %   The current figure is cleared to create the new figure. Execute
 %   SUBPLOT(AX(I,J)) to activate the axes in the I,J position.
 %
+%   Example:
+%
+%     ax = newfig(1,3);
+%     plotfun(@(x) 1,[-2 2]);
+%     ylim([-4 4]);
+%     subplot(ax(1,2));
+%     plotfun(@(x) x,[-2 2]);
+%     ylim([-4 4]);
+%     subplot(ax(1,3));
+%     plotfun(@(x) x^2,[-2 2]);
+%     ylim([-4 4]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(0,2);

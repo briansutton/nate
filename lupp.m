@@ -19,6 +19,13 @@ function [L,U,P] = lupp(A)
 %
 %     P: permutation matrix
 %
+%   Example:
+%
+%     A = [ 1 2; 3 4 ]
+%     [L,U,P] = lupp(A)
+%     % check
+%     P*A-L*U
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,1);

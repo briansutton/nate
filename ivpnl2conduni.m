@@ -31,6 +31,19 @@ function kappa = ivpnl2conduni(dfdu,dfdv,ab,m,n,p,q)
 %
 %     KAPPA: estimated absolute condition number
 %
+%   Example: The Van der Pol equation U'' = -U + 5*(1-U^2)*U'.
+%
+%     f = @(t,u,v) -u+5*(1-u^2)*v;
+%     dfdu = @(t,u,v) -1-10*u*v;
+%     dfdv = @(t,u,v) 5*(1-u^2);
+%     a = 0; b = 50;
+%     ua = 0.1; va = 0;
+%     m = 3; n = 1000;
+%     [ps,qs,rs] = ivpnl2uni(f,dfdu,dfdv,[a b],ua,va,m,n);
+%     p = interpuni(ps,[a b]);
+%     q = interpuni(qs,[a b]);
+%     ivpnl2conduni(dfdu,dfdv,[a b],m,n,p,q)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(7,7);

@@ -22,6 +22,17 @@ function varargout = plotpartition(varargin)
 %
 %     H = PLOTPARTITION(...): graphics handle
 %
+%   Example:
+%
+%     f = @(x) cos(x); a = 0; b = 2*pi;
+%     m = 2; n = 4;
+%     xs = griduni([a b],m,n)
+%     ps = sampleuni(f,[a b],m,n)
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotpartition([a b],n);
+%     plotsample(xs,ps);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,2);

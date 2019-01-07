@@ -28,6 +28,15 @@ function [M,x] = infnorm(f,ab,n)
 %   scenarios. A spike in the middle of the interval may easily be missed
 %   when N is small.
 %
+%   Example:
+%
+%     f = @(x) sin(7*x)+cos(11*x); a = -1; b = 1;
+%     M = infnorm(f,[a b],100)
+%     newfig;
+%     plotfun(@(x) f(x),[a b]);
+%     plotfun(@(x) M,[a b]);
+%     plotfun(@(x) -M,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,3);

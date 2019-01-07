@@ -19,6 +19,18 @@ function [J,K] = indefinitecheb(m)
 %   grid over the same interval, then P is an antiderivative of Q if and
 %   only if J*PS = (B-A)/2*K*QS.
 %
+%   Example:
+%
+%     m = 2;
+%     [J,K] = indefinitecheb(m);
+%     q = @(x) 5*x^2+2*x-3;
+%     p = @(x) (5/3)*x^3+x^2-3*x+4;
+%     a = -2; b = 2;
+%     qs = samplecheb(q,[a b],m);
+%     ps = samplecheb(p,[a b],m+1);
+%     J*ps
+%     ((b-a)/2)*K*qs
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,1);

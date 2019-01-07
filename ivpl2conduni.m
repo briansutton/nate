@@ -39,6 +39,17 @@ function kappa = ivpl2conduni(al,be,ga,ab,c,m,n)
 %     William W. Hager. Condition estimates. SIAM J. Sci. Statist. Comput.
 %     5(2):311-316, 1984.
 %
+%   Example: A damped and potentially forced oscillator
+%   2*U + 0.1*U' + U'' = G(T).
+%
+%     al = @(t) 2;
+%     be = @(t) 0.1;
+%     ga = @(t) 1;
+%     a = 0; b = 90;
+%     c = [ 1 0 0; 0 1 0 ];
+%     m = 3; n = 1000;
+%     ivpl2conduni(al,be,ga,[a b],c,m,n)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(7,7);

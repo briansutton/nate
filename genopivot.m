@@ -21,6 +21,15 @@ function x = genopivot(A,b)
 %   This routine implements Gaussian elimination without pivoting. It may
 %   produce garbage if any pivot equals zero.
 %
+%   Example:
+%
+%     A = [ 4 3; 2 1 ]
+%     b = [10; 4]
+%     x = genopivot(A,b)
+%     % check
+%     A*x
+%     b
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

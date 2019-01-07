@@ -46,6 +46,18 @@ function [ps,qs,asbs] = ivpnl1chebpw(f,dfdu,ab,ua,m,n,kmax,tol)
 %   Its derivative is sampled on a degree-M grid on each subinterval to
 %   produce QS.
 %
+%   Example: The logistic equation U' = U*(1-U).
+%
+%     f = @(t,u) u*(1-u);
+%     dfdu = @(t,u) 1-2*u;
+%     a = 0; b = 10;
+%     ua = 0.1;
+%     m = 32; n = 10;
+%     [ps,qs,asbs] = ivpnl1chebpw(f,dfdu,[a b],ua,m,n);
+%     p = interpchebpw(ps,asbs);
+%     newfig;
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(6,8);

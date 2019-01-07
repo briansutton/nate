@@ -18,6 +18,14 @@ function I = definitecheb(qs,ab)
 %   If Q is a polynomial of degree at most M, then the result is exact, up
 %   to roundoff error.
 %
+%   Example:
+%
+%     g = @(x) exp(x/2); a = -1; b = 1;
+%     m = 30;
+%     qs = samplecheb(g,[a b],m);
+%     definitecheb(qs,[a b])
+%     2*exp(b/2)-2*exp(a/2)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

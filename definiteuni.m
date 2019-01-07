@@ -18,6 +18,14 @@ function I = definiteuni(qs,ab)
 %   The result is exact if Q is a polynomial of degree at most M on each
 %   subinterval of the piecewise-uniform grid.
 %
+%   Example:
+%
+%     g = @(x) exp(x/2); a = -1; b = 1;
+%     m = 2; n = 100;
+%     qs = sampleuni(g,[a b],m,n);
+%     definiteuni(qs,[a b])
+%     2*exp(b/2)-2*exp(a/2)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

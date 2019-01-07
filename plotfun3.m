@@ -23,6 +23,11 @@ function varargout = plotfun3(fx,fy,fz,ab,varargin)
 %   Additional arguments beyond AB control formatting, the legend entry,
 %   etc. See HELP FPLOT3.
 %
+%   Example:
+%
+%     newfig;
+%     plotfun3(@(t) cos(t),@(t) sin(t),@(t) t,[0 8*pi]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(4,inf);

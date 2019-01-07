@@ -21,6 +21,17 @@ function ys = sampleuni(f,ab,m,n)
 %   An M-by-N piecewise-uniform grid is constructed on [A,B], and then the
 %   function F is evaluated at each node to produce YS.
 %
+%   Example:
+%
+%     f = @(x) cos(x); a = 0; b = 2*pi;
+%     m = 2; n = 4;
+%     xs = griduni([a b],m,n)
+%     ps = sampleuni(f,[a b],m,n)
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotpartition([a b],n);
+%     plotsample(xs,ps);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,4);

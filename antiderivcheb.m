@@ -21,6 +21,19 @@ function ps = antiderivcheb(pa,qs,ab)
 %   If Q is a polynomial of degree at most M, then the antiderivative is
 %   exact, up to roundoff error.
 %
+%   Example:
+%
+%     g = @(x) cos(x); a = 0; b = 4*pi;
+%     fa = 5;
+%     m = 30;
+%     qs = samplecheb(g,[a b],m);
+%     ps = antiderivcheb(fa,qs,[a b]);
+%     p = interpcheb(ps,[a b]);
+%     f = @(x) 5+sin(x);
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,3);

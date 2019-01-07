@@ -21,6 +21,15 @@ function x = gepp(A,b)
 %   The computed solution may be inaccurate if A is ill conditioned or
 %   meaningless if A*X = B does not have a solution.
 %
+%   Example:
+%
+%     A = [ 1 2; 3 4 ]
+%     b = [4; 10]
+%     x = gepp(A,b)
+%     % check
+%     A*x
+%     b
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

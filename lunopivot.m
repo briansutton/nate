@@ -17,6 +17,13 @@ function [L,U] = lunopivot(A)
 %
 %     U: upper-triangular factor
 %
+%   Example:
+%
+%     A = [ 4 3; 2 1 ]
+%     [L,U] = lunopivot(A)
+%     % check
+%     A-L*U
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,1);

@@ -21,6 +21,18 @@ function ys = samplechebpw(f,asbs,m)
 %   on [AJ,BJ], J = 1,...,N, is constructed. Then the function F is
 %   evaluated at each node to produce YS.
 %
+%   Example:
+%
+%     f = @(x) exp(x); a = -2; b = 2;
+%     asbs = [ -2 0 1 ; 0 1 2 ]
+%     m = 5;
+%     xs = gridchebpw(asbs,m)
+%     ps = samplechebpw(f,asbs,m)
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotpartition(asbs);
+%     plotsample(xs,ps);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(3,3);

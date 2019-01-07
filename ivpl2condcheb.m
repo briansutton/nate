@@ -30,6 +30,21 @@ function kappa = ivpl2condcheb(al,be,ga,ab,c,m)
 %     KAPPA: an estimate for the absolute condition number of the finite
 %     collocation system
 %
+%   Example: A forced and damped oscillator 2*U + 0.1*U' + U'' = SIN(T).
+%
+%     al = @(t) 2;
+%     be = @(t) 0.1;
+%     ga = @(t) 1;
+%     g = @(t) sin(t);
+%     a = 0; b = 90;
+%     c = [ 1 0 0; 0 1 0 ];
+%     d = [1; 0];
+%     m = 100;
+%     [ps,qs,rs] = ivpl2cheb(al,be,ga,g,[a b],c,d,m);
+%     p = interpcheb(ps,[a b]);
+%     newfig;
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(6,6);

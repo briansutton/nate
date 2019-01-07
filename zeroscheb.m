@@ -20,6 +20,16 @@ function z = zeroscheb(ps,ab,tol)
 %   If the grid is of degree M and the polynomial is of degree at most M,
 %   then the zeros are exact (in theory).
 %
+%   Example:
+%
+%     f = @(x) cos(x); a = 0; b = 10;
+%     m = 30;
+%     ps = samplecheb(f,[a b],m);
+%     z = zeroscheb(ps,[a b])
+%     newfig;
+%     plotfun(f,[a b]);
+%     plot(z,zeros(size(z)),'*');
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,3);

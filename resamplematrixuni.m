@@ -19,6 +19,18 @@ function E = resamplematrixuni(l,m)
 %   on a uniform grid of degree M. Then E*PS is a sample of P on the
 %   uniform grid of degree L over the same interval.
 %
+%   Example:
+%
+%     l = 4;
+%     m = 3;
+%     E = resamplematrixuni(l,m);
+%     p = @(x) 2*x^3-x^2+4*x-3; a = -1; b = 1;
+%     ps = sampleuni(p,[a b],m);
+%     newfig;
+%     plotfun(p,[a b]);
+%     plotsample(griduni([a b],m),ps);
+%     plotsample(griduni([a b],l),E*ps,'o');
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

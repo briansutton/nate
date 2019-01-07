@@ -23,6 +23,17 @@ function kappa = ivpnl1condchebpw(dfdu,asbs,m,p)
 %
 %     KAPPA: estimated absolute condition number
 %
+%   Example: The logistic equation U' = U*(1-U).
+%
+%     f = @(t,u) u*(1-u);
+%     dfdu = @(t,u) 1-2*u;
+%     a = 0; b = 10;
+%     ua = 0.1;
+%     m = 32; n = 10;
+%     [ps,qs,asbs] = ivpnl1chebpw(f,dfdu,[a b],ua,m,n);
+%     p = interpchebpw(ps,asbs);
+%     ivpnl1condchebpw(dfdu,asbs,m,p)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(4,4);

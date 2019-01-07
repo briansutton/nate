@@ -18,6 +18,18 @@ function p = interpuni(ps,ab)
 %   on [A,B]. P is constructed so that P(XS(I,J)) = PS(I,J) and so that P
 %   is a polynomial of degree at most M on each subinterval in the grid.
 %
+%   Example:
+%
+%     f = @(x) sin(x); a = -pi; b = pi;
+%     m = 2; n = 4;
+%     ps = sampleuni(f,[a b],m,n);
+%     p = interpuni(ps,[a b]);
+%     newfig;
+%     plotfun(f,[a b]);
+%     plotpartition([a b],n);
+%     plotsample(griduni([a b],m,n),ps);
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

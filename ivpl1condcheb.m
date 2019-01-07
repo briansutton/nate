@@ -24,6 +24,15 @@ function kappa = ivpl1condcheb(al,be,ab,c,m)
 %     KAPPA: an estimate for the absolute condition number of the finite
 %     collocation system
 %
+%   Example: T*U + U' = G(T).
+%
+%     al = @(t) t;
+%     be = @(t) 1;
+%     a = 0; b = 6;
+%     c = [1 0];
+%     m = 30;
+%     ivpl1condcheb(al,be,[a b],c,m)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(5,5);

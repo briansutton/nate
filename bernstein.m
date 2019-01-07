@@ -14,6 +14,16 @@ function bernstein(ab,rho)
 %   RHO = 1 produces a line segment between the foci. Larger values of RHO
 %   produce larger and rounder ellipses.
 %
+%   Example:
+%
+%     newfig;
+%     legend hide;
+%     axis([-1.5 1.5 -1.5 1.5]);
+%     axis square;
+%     bernstein([-1 1],1.2);
+%     bernstein([-1 1],1.6);
+%     bernstein([-1 1],2.2);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

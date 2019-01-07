@@ -35,6 +35,20 @@ function [ps,qs] = ivpl1cheb(al,be,g,ab,c,d,m)
 %
 %   P(T) is a degree-(M+1) polynomial that approximates U(T).
 %
+%   Example: T*U + U' = 0.
+%
+%     al = @(t) t;
+%     be = @(t) 1;
+%     g = @(t) 0;
+%     c = [1 0];
+%     d = 1;
+%     a = 0; b = 6;
+%     m = 30;
+%     [ps,qs] = ivpl1cheb(al,be,g,[a b],c,d,m);
+%     p = interpcheb(ps,[a b]);
+%     newfig;
+%     plotfun(p,[a b]);
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(7,7);

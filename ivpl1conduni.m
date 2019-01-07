@@ -33,6 +33,15 @@ function kappa = ivpl1conduni(al,be,ab,c,m,n)
 %     William W. Hager. Condition estimates. SIAM J. Sci. Statist. Comput.
 %     5(2):311-316, 1984.
 %
+%   Example: T*U + U' = G(T).
+%
+%     al = @(t) t;
+%     be = @(t) 1;
+%     a = 0; b = 6;
+%     c = [1 0];
+%     m = 2; n = 200;
+%     ivpl1conduni(al,be,[a b],c,m,n)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(6,6);

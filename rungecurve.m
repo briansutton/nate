@@ -11,6 +11,14 @@ function [x,y] = rungecurve(ab)
 %   If a function has a singularity inside the Runge curve, then the Runge
 %   phenomenon is expected.
 %
+%   Example:
+%
+%     newfig;
+%     rungecurve([-1 1]);
+%     axis([-1.5 1.5 -1.5 1.5]);
+%     axis square;
+%     grid on;
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(1,1);

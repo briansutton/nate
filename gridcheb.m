@@ -16,6 +16,12 @@ function [xs,ws] = gridcheb(ab,m)
 %
 %     WS: barycentric weights for XS
 %
+%   Example:
+%
+%     a = 0; b = 2;
+%     m = 6;
+%     [xs,ws] = gridcheb([a b],m)
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,2);

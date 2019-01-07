@@ -23,6 +23,12 @@ function varargout = plotfun(f,ab,varargin)
 %   is desired, then it may be necessary to call PLOTFUN again rather than
 %   simply resetting the zoom window using XLIM or AXIS.
 %
+%   Example:
+%
+%     newfig;
+%     plotfun(@(x) exp(x),[-2 2],'displayname','exp');
+%     xlabel('x');
+%
 %   Copyright 2019 Brian Sutton
 
 narginchk(2,inf);
