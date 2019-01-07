@@ -56,53 +56,31 @@ narginchk(8,10);
 if nargin<9, kmax = 40; end
 if nargin<10, tol = 1e-12; end
 natecheck('ivpnl2chebpw',f,dfdu,dfdv,ab,ua,va,m,n,kmax,tol);
-a = ab(1);
-b = ab(2);
-[as,bs] = partition_([a b],n);
+a = ab(1); b = ab(2); [as,bs] = partition_([a b],n);
 asbs = [as;bs];
 ss = gridchebpw(asbs,m);
+xs = griduni([0 (b-a)/n],m+2); xs_ = griduni([0 (b-a)/n],m+1);
 ts = gridchebpw(asbs,m+2);
 ts_ = gridchebpw(asbs,m+1);
 [J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3] = ivp2matcheb(m,(b-a)/n);
 ps = nan(m+3,1); qs = nan(m+2,1); rs = nan(m+1,1);
 uinit = ua; vinit = va;
 warned = false;
-%h = waitbar(0,'Computing...');
-%h = plot(a,ua,'.');%[[temporary]]
 for j = 1:n
   winit = f(as(j),uinit,vinit);
-  rsstart = winit*ones(m+1,1);
-  qsstart = vinit*ones(m+2,1)+winit*(ts_(:,j)-as(j));
-  psstart = uinit*ones(m+3,1)+vinit*(ts(:,j)-as(j))+winit/2*(ts(:,j)-as(j)).^2;
-  [ps(:,j),qs(:,j),rs(:,j),k] = ivpnl2_(f,dfdu,dfdv,psstart ...
-      ,qsstart,rsstart,ss(:,j),J1,J2,K1,K2,E1               ...
-      ,E2,E3,Ea1,Ea2,Ea3,kmax,tol);
+  rsstart = repmat(winit,m+1,1);
+  qsstart = repmat(vinit,m+2,1)+winit*xs_;
+  psstart = repmat(uinit,m+3,1)+vinit*xs+winit/2*xs.^2;
+  [ps(:,j),qs(:,j),rs(:,j),k] = ivpnl2_(f,dfdu,dfdv ...
+      ,psstart,qsstart,rsstart,ss(:,j),J1,J2,K1,K2  ...
+      ,E1,E2,E3,Ea1,Ea2,Ea3,kmax,tol);
   if isempty(k)&&~warned
     warning('NATE:nonlinearIvpFailure' ...
            ,'Nonlinear IVP solver failed to converge');
     warned = true;
   end
-  %set(h,'xdata',[get(h,'xdata') as(j)+ts']); set(h,'ydata',[get(h,'ydata') ps(:,j)']); drawnow; %[[temporary]]
-  %xlim([a b]);
-  %pstep = interpcheb(psstep,[as(j) bs(j)]);
-  %qstep = interpcheb(qsstep,[as(j) bs(j)]);
-  %rstep = interpcheb(rsstep,[as(j) bs(j)]);
-  %ps(as(j)<=ts&ts<=bs(j)) = pstep(ts(as(j)<=ts&ts<=bs(j)));
-  %qs(as(j)<=ts_&ts_<=bs(j)) = qstep(ts_(as(j)<=ts_&ts_<=bs(j)));
-  %rs(as(j)<=ts__&ts__<=bs(j)) = rstep(ts__(as(j)<=ts__&ts__<=bs(j)));
-  %I = as(j)<=ts&ts<=bs(j);
-  %ps(I) = interp_(as(j)+xs,ws,pspw,ts(I));
-  %I_ = as(j)<=ts_&ts_<=bs(j);
-  %qs(I_) = interp_(as(j)+xs_,ws_,qspw,ts_(I_));
-  %I__ = as(j)<=ts__&ts__<=bs(j);
-  %rs(I__) = interp_(as(j)+xs__,ws__,rspw,ts__(I__));
-  uinit = ps(end);
-  vinit = qs(end);
-  %if mod(j,round(n/10))==0
-  %  waitbar(j/n,h);
-  %end
+  uinit = ps(end,j); vinit = qs(end,j);
 end
-ps(1,2:end) = ps(end,1:end-1);          % \% continuity @
-qs(1,2:end) = qs(end,1:end-1);
+ps(1,2:end) = ps(end,1:end-1); qs(1,2:end) = qs(end,1:end-1);
 if m>0, rs(1,2:end) = rs(end,1:end-1); end
 
