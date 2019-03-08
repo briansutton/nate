@@ -72,7 +72,6 @@ natecheck('ivpnl2chebpw',f,dfdu,dfdv,ab,ua,va,m,n,kmax,tol);
 a = ab(1); b = ab(2);
 [as,bs] = partition_([a b],n); asbs = [as;bs];
 ss = gridchebpw(asbs,m);
-%xs = griduni([0 (b-a)/n],m+2); xs_ = griduni([0 (b-a)/n],m+1);
 ts = gridchebpw(asbs,m+2);
 ts_ = gridchebpw(asbs,m+1);
 [J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3] = ivp2matcheb(m,(b-a)/n);
