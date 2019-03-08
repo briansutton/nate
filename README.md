@@ -7,7 +7,7 @@ This package is a library of MATLAB routines that accompany the book.
 ## Installation
 
 The library is installed as follows:
-1. Download the package [nate.zip](nate.zip).
+1. Download the package [nate.zip](https://github.com/briansutton/nate/archive/master.zip).
 1. Expand the zip file if it was not expanded automatically.
 1. Start MATLAB.
 1. Use the `pathtool` dialog to add the new package folder to the MATLAB path:
