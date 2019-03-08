@@ -69,21 +69,21 @@ narginchk(8,10);
 if nargin<9, kmax = 40; end
 if nargin<10, tol = 1e-12; end
 natecheck('ivpnl2chebpw',f,dfdu,dfdv,ab,ua,va,m,n,kmax,tol);
-a = ab(1); b = ab(2); [as,bs] = partition_([a b],n);
-asbs = [as;bs];
+a = ab(1); b = ab(2);
+[as,bs] = partition_([a b],n); asbs = [as;bs];
 ss = gridchebpw(asbs,m);
-xs = griduni([0 (b-a)/n],m+2); xs_ = griduni([0 (b-a)/n],m+1);
+%xs = griduni([0 (b-a)/n],m+2); xs_ = griduni([0 (b-a)/n],m+1);
 ts = gridchebpw(asbs,m+2);
 ts_ = gridchebpw(asbs,m+1);
 [J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3] = ivp2matcheb(m,(b-a)/n);
 ps = nan(m+3,1); qs = nan(m+2,1); rs = nan(m+1,1);
-uinit = ua; vinit = va;
 warned = false;
+uinit = ua; vinit = va;
 for j = 1:n
   winit = f(as(j),uinit,vinit);
   rsstart = repmat(winit,m+1,1);
-  qsstart = repmat(vinit,m+2,1)+winit*xs_;
-  psstart = repmat(uinit,m+3,1)+vinit*xs+winit/2*xs.^2;
+  qsstart = repmat(vinit,m+2,1)+winit*(ts_(:,j)-as(j));
+  psstart = repmat(uinit,m+3,1)+vinit*(ts(:,j)-as(j))+winit/2*(ts(:,j)-as(j)).^2;
   [ps(:,j),qs(:,j),rs(:,j),k] = ivpnl2_(f,dfdu,dfdv ...
       ,psstart,qsstart,rsstart,ss(:,j),J1,J2,K1,K2  ...
       ,E1,E2,E3,Ea1,Ea2,Ea3,kmax,tol);
@@ -94,6 +94,7 @@ for j = 1:n
   end
   uinit = ps(end,j); vinit = qs(end,j);
 end
-ps(1,2:end) = ps(end,1:end-1); qs(1,2:end) = qs(end,1:end-1);
-if m>0, rs(1,2:end) = rs(end,1:end-1); end
+ps(1,2:end) = ps(end,1:end-1);
+qs(1,2:end) = qs(end,1:end-1);
+rs(1,2:end) = rs(end,1:end-1);
 
