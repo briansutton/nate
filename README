@@ -1,0 +1,31 @@
+_Numerical_Analysis:_Theory_and_Experiments_ is a textbook on numerical
+analysis. Numerical methods are designed and implemented, and then they are
+analyzed through a combination of mathematical theory and numerical
+experimentation. Problem areas include interpolation, integration, linear
+systems, zero finding, and differential equations.
+
+This package is a library of MATLAB routines that accompany the book.
+
+Installation
+------------
+
+The library is installed as follows:
+
+1. Download the package nate.zip.
+
+2. Expand the zip file if it was not expanded automatically.
+
+3. Start MATLAB.
+
+4. Use the pathtool dialog to add the new package folder to the MATLAB
+   path:
+
+   >> pathtool
+
+5. Verify that the library routines are available as follows:
+
+   >> nate
+   Numerical Analysis: Theory and Experiments
+
+6. Set the Command Window preferences in MATLAB to 'long' numeric format and
+   'compact' numeric display.
