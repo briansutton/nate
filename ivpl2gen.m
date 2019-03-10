@@ -62,6 +62,5 @@ E3 = evalmatrixgen(ss,ts__);
 Ea1 = evalmatrixgen(a,ts);
 Ea2 = evalmatrixgen(a,ts_);
 Ea3 = evalmatrixgen(a,ts__);
-[ps,qs,rs] = ivpl2_(als,bes,gas,gs,c,d ...
-                                        ,J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3);
+[ps,qs,rs] = ivpl2_(als,bes,gas,gs,c,d,J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3);
 

@@ -24,16 +24,12 @@ function [y,x] = golden_(f,a,b)
 c = min(a,b);
 d = max(a,b);
 phi = 1.618033988749895;
-% (d-c)/phi^n = max(eps(a),eps(b))
-% phi^n = (d-c)/max...
-% n = (log(d-c)-log(max(...)))/log(phi)
 n = ceil((log(d-c)-log(max(eps(a),eps(b))))/log(phi));
 delta = (d-c)/phi;
 x1 = d-delta;
 x2 = c+delta;
 f1 = f(x1);
 f2 = f(x2);
-%while d-c>max(eps(a),eps(b))
 for k = 1:n
   if f1>f2
     d = x2;
@@ -55,6 +51,3 @@ x = [ a c x1 x2 d b ];
 y = [ f(a) f(c) f1 f2 f(d) f(b) ];
 [y,i] = max(y);
 x = x(i);
-%x = c+(d-c)/2;
-%y = f(x);
-

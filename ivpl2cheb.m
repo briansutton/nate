@@ -69,6 +69,4 @@ bes = samplecheb(be,[a b],m);
 gas = samplecheb(ga,[a b],m);
 gs = samplecheb(g,[a b],m);
 [J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3] = ivp2matcheb(m,b-a);
-[ps,qs,rs] = ivpl2_(als,bes,gas,gs ...
-                                    ,c,d,J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3);
-
+[ps,qs,rs] = ivpl2_(als,bes,gas,gs,c,d,J1,J2,K1,K2,E1,E2,E3,Ea1,Ea2,Ea3);

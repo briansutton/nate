@@ -44,11 +44,9 @@ m = 0;
 for k = 1:n-2
   if y(k+1)>y(k)&&y(k+1)>y(k+2)
     m = m+1;
-    %[yy(m),xx(m)] = localmax(f,x(k),x(k+2));
     [yy(m),xx(m)] = golden_(f,x(k),x(k+2));
   elseif y(k+1)<y(k)&&y(k+1)<y(k+2)
     m = m+1;
-    %[yy(m),xx(m)] = localmax(@(x) -f(x),x(k),x(k+2));
     [yy(m),xx(m)] = golden_(@(x) -f(x),x(k),x(k+2));
     yy(m) = -yy(m);
   elseif isfinite(y(k))&&~isfinite(y(k+1))

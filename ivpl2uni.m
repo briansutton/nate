@@ -87,7 +87,3 @@ end
 ps(1,2:end) = ps(end,1:end-1);
 qs(1,2:end) = qs(end,1:end-1);
 if m>0, rs(1,2:end) = rs(end,1:end-1); end
-%[[2018-05-20: delete previous line for enforcing continuity on r? deleting
-%would be potentially helpful for solutions with discontinuous second
-%derivatives such as heaviside forcing]]
-
