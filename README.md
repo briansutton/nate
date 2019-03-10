@@ -20,3 +20,18 @@ The library is installed as follows:
    Numerical Analysis: Theory and Experiments
    ```
 1. Set the Command Window preferences in MATLAB to `long` numeric format and `compact` numeric display.
+
+## Demonstration
+
+The following code computes and plots the arctan function.
+```
+>> g = @(x) 1/(1+x^2); a = 0; b = 10;
+>> fa = 0;
+>> qs = samplecheb(g,[a b],60);
+>> ps = antiderivcheb(fa,qs,[a b]);
+>> p = interpcheb(ps,[a b]);
+>> newfig;
+>> plotfun(p,[a b],'displayname','p')
+>> legend('location','southeast');
+```
+![arctan](https://github.com/briansutton/nate/raw/master/arctan.png "arctan")

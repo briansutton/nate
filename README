@@ -6,6 +6,8 @@ systems, zero finding, and differential equations.
 
 This package is a library of MATLAB routines that accompany the book.
 
+
+
 Installation
 ------------
 
@@ -29,3 +31,19 @@ The library is installed as follows:
 
 6. Set the Command Window preferences in MATLAB to 'long' numeric format and
    'compact' numeric display.
+
+
+
+Demonstration
+-------------
+
+The following code computes and plots the arctan function.
+
+>> g = @(x) 1/(1+x^2); a = 0; b = 10;
+>> fa = 0;
+>> qs = samplecheb(g,[a b],60);
+>> ps = antiderivcheb(fa,qs,[a b]);
+>> p = interpcheb(ps,[a b]);
+>> newfig;
+>> plotfun(p,[a b],'displayname','p')
+>> legend('location','southeast');
