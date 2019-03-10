@@ -31,7 +31,8 @@ The following code computes and plots the arctan function.
 >> ps = antiderivcheb(fa,qs,[a b]);
 >> p = interpcheb(ps,[a b]);
 >> newfig;
->> plotfun(p,[a b],'displayname','p')
+>> plotfun(p,[a b],'displayname','p');
+>> ylim([0 pi/2]);
 >> legend('location','southeast');
 ```
 ![arctan](https://github.com/briansutton/nate/raw/master/arctan.png "arctan")
