@@ -1,6 +1,7 @@
-# nate
+# *Numerical Analysis: Theory and Experiments*
+## Brian Sutton
 
-*Numerical Analysis: Theory and Experiments* is a textbook on numerical analysis. Numerical methods are designed and implemented, and then they are analyzed through a combination of mathematical theory and numerical experimentation. Problem areas include interpolation, integration, linear systems, zero finding, and differential equations.
+[*Numerical Analysis: Theory and Experiments*](http://bookstore.siam.org/ot161/) is a textbook on numerical analysis. Numerical methods are designed and implemented, and then they are analyzed through a combination of mathematical theory and numerical experimentation. Problem areas include interpolation, integration, linear systems, zero finding, and differential equations.
 
 This package is a library of MATLAB routines that accompany the book.
 
