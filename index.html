@@ -1,0 +1,52 @@
+<h1>Numerical Analysis: Theory and Experiments</h1>
+
+<p><i>Numerical Analysis: Theory and Experiments<i> is a textbook on numerical
+analysis. Numerical methods are designed and implemented, and then they are
+analyzed through a combination of mathematical theory and numerical
+experimentation. Problem areas include interpolation, integration, linear
+systems, zero finding, and differential equations.</p>
+
+<p>This package is a library of MATLAB routines that accompany the book.</p>
+
+
+
+<h2>Installation</h2>
+
+<p>The library is installed as follows:</p>
+
+<ol>
+<li> Download the package <a href="https://github.com/briansutton/nate/archive/master.zip">nate-master.zip</a>.
+<li> Expand the zip file if it was not expanded automatically.
+<li> Start MATLAB.
+<li> Use the pathtool dialog to add the new package folder to the MATLAB
+   path:
+
+   <pre>>> pathtool</pre>
+
+<li> Verify that the library routines are available as follows:
+
+   <pre>>> nate
+   Numerical Analysis: Theory and Experiments</pre>
+
+<li> Set the Command Window preferences in MATLAB to 'long' numeric format and
+   'compact' numeric display.
+</ol>
+
+
+<h2>Demonstration</h2>
+
+<p>The following code computes and plots the arctan function.</pi>
+
+<pre>
+>> g = @(x) 1/(1+x^2); a = 0; b = 10;
+>> fa = 0;
+>> qs = samplecheb(g,[a b],60);
+>> ps = antiderivcheb(fa,qs,[a b]);
+>> p = interpcheb(ps,[a b]);
+>> newfig;
+>> plotfun(p,[a b],'displayname','p');
+>> ylim([0 pi/2]);
+>> legend('location','southeast');
+</pre>
+
+<img src="https://github.com/briansutton/nate/raw/master/arctan.png" alt="arctan" />
