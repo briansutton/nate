@@ -11,7 +11,7 @@ function varargout = plotrealpart(f,lims)
 %
 %   Outputs:
 %
-%     H = PLOTIMAGPART(...): graphics handle
+%     H = PLOTREALPART(...): graphics handle
 %
 %   Example:
 %
