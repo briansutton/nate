@@ -5,7 +5,8 @@ experimentation. Problem areas include interpolation, integration, linear
 systems, zero finding, and differential equations. Chebyshev methods are
 used early and often.
 
-This package is a library of MATLAB routines that accompany the book.
+This package is a library of MATLAB routines that accompany the book. There
+is also a version for Octave at https://github.com/briansutton/nate-octave.
 
 
 
